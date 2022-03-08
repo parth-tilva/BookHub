@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="4dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="4dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:weightSum="6"
+        >
+        <!--The weight sum property is used to divide the layout into
+        different parts and then giving each layout a particular weight
+        gives it that amount of space on the screen-->
+
+
+        <!--Since each parent layout will have a specific weight, we need
+        not give any width to those layout-->
+
+        <ImageView
+            android:layout_weight="1.5"
+            android:id="@+id/imgBookImage"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:padding="5dp"/>
+
+        <RelativeLayout
+            android:layout_weight="3.3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtBookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name of the book"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/txtBookAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBookName"
+                android:text="Name of the Author"
+                android:padding="8dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/txtBookPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBookAuthor"
+                android:layout_alignParentBottom="true"
+                android:padding="8dp"
+                android:text="Rs. 299"
+                android:textColor="#357a38"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <!--Many times we see that texts have an image along with them to
+        their right or left. This is added with the help of the
+        drawableLeft (or drawableRight and so on) attribute-->
+
+        <TextView
+            android:id="@+id/txtBookRating"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_star_yellow"
+            android:textColor="#ffca28"
+            android:text="4.5"
+            android:drawablePadding="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold">
+        </TextView>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginBottom="2dp"-->
+<!--        app:cardCornerRadius="3dp"-->
+<!--        app:cardElevation="4dp" >-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgCover"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:src="@drawable/book_app_icon_web" />-->
+
+<!--            <TextView-->
+<!--                android:layout_toEndOf="@id/imgCover"-->
+<!--                android:id="@+id/txtName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="List Item"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#000"-->
+<!--                android:textStyle="bold"/>-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignEnd="@id/txtRating"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:layout_marginTop="7dp"-->
+<!--                android:padding="5dp"-->
+<!--                android:src="@android:drawable/btn_star" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtRating"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:drawableLeft="@mipmap/ic_launcher"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginTop="7dp"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:padding="5dp"-->
+<!--                android:text="4.5" />-->
+
+<!--            <TextView-->
+<!--                android:layout_below="@id/txtName"-->
+<!--                android:id="@+id/txtNameOfAuthor"-->
+<!--                android:layout_toEndOf="@id/imgCover"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Name of the Author"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="#3C3939"-->
+<!--                />-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtPrice"-->
+<!--                android:layout_below="@id/txtNameOfAuthor"-->
+<!--                android:layout_toEndOf="@id/imgCover"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Rs. 299"-->
+<!--                android:textStyle="bold"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="#0B6814"-->
+<!--                />-->
+
+<!--        </RelativeLayout>-->
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+
+<!--</RelativeLayout>-->

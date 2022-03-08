@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DescriptionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/purple_700"/>
+
+    <LinearLayout android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:layout_below="@+id/toolbar"
+        android:weightSum="6"
+        >
+        <!--The weight sum property is used to divide the layout into
+        different parts and then giving each layout a particular weight
+        gives it that amount of space on the screen-->
+
+
+        <!--Since each parent layout will have a specific weight, we need
+        not give any width to those layout-->
+
+        <ImageView
+            android:layout_weight="1.5"
+            android:id="@+id/imgBookImage"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:padding="5dp"/>
+
+        <RelativeLayout
+            android:layout_weight="3.3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtBookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name of the book"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/txtBookAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBookName"
+                android:text="Name of the Author"
+                android:padding="8dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/txtBookPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBookAuthor"
+                android:layout_alignParentBottom="true"
+                android:padding="8dp"
+                android:text="Rs. 299"
+                android:textColor="#357a38"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <!--Many times we see that texts have an image along with them to
+        their right or left. This is added with the help of the
+        drawableLeft (or drawableRight and so on) attribute-->
+
+        <TextView
+            android:id="@+id/txtBookRating"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_star_yellow"
+            android:textColor="#ffca28"
+            android:text="4.5"
+            android:drawablePadding="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold">
+        </TextView>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/about_book_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_below="@id/llContent"
+        android:gravity="center_horizontal"
+        android:text="About the Book:"/>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_below="@id/about_book_text"
+        android:layout_width="match_parent"
+        android:layout_above="@id/btnAddtoFavorite"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtBookDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@string/hello_blank_fragment"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnAddtoFavorite"
+        android:text="Add to favourites"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rLayoutProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>
